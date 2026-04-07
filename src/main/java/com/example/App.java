@@ -19,9 +19,9 @@ import jakarta.mail.search.SearchTerm;
 
 public class App {
 
-    private static String EMAIL = "tothszabi0224@gmail.com";
-    private static String USER_NAME = "tothszabi0224@gmail.com";
-    private static String PASSWORD = "pzwu foxl tvhh cqrd"; //alkalmazásjelszó
+    private static String EMAIL = "valami@gmail.com";
+    private static String USER_NAME = "valami@gmail.com";
+    private static String PASSWORD = "xxxx xxxx xxxx xxxx"; //alkalmazásjelszó
 
     public static void main( String[] args ) {
 
