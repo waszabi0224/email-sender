@@ -1,21 +1,53 @@
 <html>
 <head>
     <style>
-        body {
-            font-family: "Times New Roman";
-            margin-top: 24px;
-        }
-
         .level {
+            font-family: "Times New Roman";
             max-width: 800px;
-            margin: 40px auto;
-            padding: 40px 50px;
+            padding-top: 45px;
+            padding-left: 80px;
+            padding-right: 70px;
             background-color: #fffdf9;
             border: 1px solid #d8dee4;
             border-radius: 10px;
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
-            line-height: 1.7;
+            line-height: 2;
             font-size: 20px;
+        }
+
+        .content {
+            margin-top: 40px;
+            text-align: justify;
+        }
+
+        .bottom {
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .content p {
+            margin: 0;
+            padding: 0;
+        }
+
+        .left {
+            margin-top: 24px;
+            position: relative;
+            min-width: 200px;
+            flex: 0 0 200px;
+        }
+
+        .right {
+            margin-left: auto;
+        }
+        .right img {
+            margin-top: 80px;
+            width: 200px;
+            height: 200px;
+            display: block;
+            opacity: 0.3;
         }
     </style>
 </head>
@@ -23,15 +55,27 @@
     <div class="level">
         <p>Tisztelt Címzett!</p>
 
-        </p>Tóth Szabolcsnak hívnak, 23 éves szegedi lakos vagyok.
-            Gazdaságinformatikusként végeztem a Szegedi Tudományegyetemen alapszakon.
-            Érdeklődni szeretnék Önöknél esetleges nyitott pozíció iránt, ahol leginkább a szoftverfejlesztés
-            és arra épülő dolgok vonzanak, de lehetőség szerint bármit megtanulok.
-            Csatolva küldöm az önéletrajzom is! További szép napot! :)</p>
+        <div class="content">
+            </p>
+                Tóth Szabolcsnak hívnak, 23 éves szegedi lakos vagyok.
+                Gazdaságinformatikusként végeztem a Szegedi Tudományegyetemen alapszakon.
+                Érdeklődni szeretnék Önöknél esetleges nyitott pozíció iránt. A szoftverfejlesztés
+                és az arra épülő dolgok vonzanak, de lehetőség szerint bármit megtanulok.
+                Csatolva küldöm az önéletrajzom is, addig is várom mielőbbi visszajelzésüket.
+            </p>
+        </div>
 
-        <p>Tisztelettel:</p>
-
-        <p>Tóth Szabolcs</p>
+        <div class="bottom">
+            <div class="left">
+                <p>További szép napot!</p>
+                <p>Tisztelettel:</p>
+                <p>Tóth Szabolcs</p>
+            </div>
+            
+            <div class="right">
+                <img src="cid:logo0224" alt="Tsz">
+            </div>
+        </div>
     </div>
 </body>
 </html>

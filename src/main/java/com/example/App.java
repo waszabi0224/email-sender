@@ -19,9 +19,9 @@ import jakarta.mail.search.SearchTerm;
 
 public class App {
 
-    private static String EMAIL = "valami@gmail.com";
-    private static String USER_NAME = "valami@gmail.com";
-    private static String PASSWORD = "xxxx xxxx xxxx xxxx"; //alkalmazásjelszó
+    private static String EMAIL = "tothszabi0224@gmail.com";
+    private static String USER_NAME = "tothszabi0224@gmail.com";
+    private static String PASSWORD = "pzwu foxl tvhh cqrd"; //alkalmazásjelszó
 
     public static void main( String[] args ) {
 
@@ -89,7 +89,12 @@ public class App {
                 String htmlText = Files.readString(Path.of("email.html"));
 
                 MimeBodyPart htmlPart = new MimeBodyPart();
-                htmlPart.setContent(htmlText, "text/html; chatset=UTF-8");
+                htmlPart.setContent(htmlText, "text/html; charset=UTF-8");
+
+                MimeBodyPart imagePath = new MimeBodyPart();
+                imagePath.attachFile(new File("logo.png"));
+                imagePath.setHeader("Content-ID","<logo0224>");
+                imagePath.setDisposition(MimeBodyPart.INLINE);
 
                 MimeBodyPart attachmenPart = new MimeBodyPart();
                 attachmenPart.attachFile(new File("cv.pdf"));
@@ -97,6 +102,7 @@ public class App {
 
                 MimeMultipart multipart = new MimeMultipart();
                 multipart.addBodyPart(htmlPart);
+                multipart.addBodyPart(imagePath);
                 multipart.addBodyPart(attachmenPart);
 
                 message.setContent(multipart);
@@ -237,7 +243,7 @@ public class App {
             collectTextFromMessage(textCollector, message);
             String bodyString = textCollector.toString();
 
-            if(bodyString.contains("A cím nem található") || bodyString.contains("Üzenetét nem sikerült kézbesíteni") || bodyString.contains("cím nem található, vagy nem tud leveleket fogadni.") || bodyString.contains("does not exist") || bodyString.contains("NoSuchUser")) {
+            if(bodyString.contains("A cím nem található") || bodyString.contains("Üzenetét nem sikerült kézbesíteni") || bodyString.contains("cím nem található, vagy nem tud leveleket fogadni.") || bodyString.contains("does not exist") || bodyString.contains("NoSuchUser") || bodyString.contains("couldn't be delivered") || bodyString.contains("wasn't found at")) {
                 String regex = "[a-zA-Z0-9._%+-]+@[a-zA-Z0-9._%+-]+\\.[a-zA-Z]{2,}";
                 Pattern pattern = Pattern.compile(regex);
                 Matcher matcher = pattern.matcher(bodyString);
